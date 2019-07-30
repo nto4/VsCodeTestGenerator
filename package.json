@@ -27,27 +27,24 @@
 		],
 		"menus": {
 			"explorer/context": [
-			  {
-				"when": "explorerResourceIsFolder",
-				"command": "extension.action"
-			
-			  }
+				{
+					"when": "explorerResourceIsFolder",
+					"command": "extension.action"
+				}
 			],
 			"editor/title/context": [
-			  {
-				"when": "",
-				"command": "extension.action"
-				
-			  }
+				{
+					"when": "",
+					"command": "extension.action"
+				}
 			],
 			"editor/context": [
-			  {
-				"when": "",
-				"command": "extension.action"
-				
-			  }
+				{
+					"when": "",
+					"command": "extension.action"
+				}
 			]
-		  }
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

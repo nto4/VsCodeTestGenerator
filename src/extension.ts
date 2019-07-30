@@ -3,6 +3,7 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import { create } from 'domain';
+import * as fs from 'fs';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -25,8 +26,12 @@ export function activate(context: vscode.ExtensionContext) {
 		//vscode.window.showInformationMessage("untitled: + $folderPath",folderPath);
 		let filePath = ("untitled:"+folderPath);
 		console.log(filePath);
+		//var oldDocText = fs.readFileSync(filePath);
+		//fs.writeFileSync(filePath, oldDocText);
 		//let a = vscode.workspace.openTextDocument
-		vscode.workspace.openTextDocument(filePath);
+		//vscode.workspace.openTextDocument(filePath);
+		vscode.workspace.openTextDocument().then(doc => vscode.window.showTextDocument(doc));
+		
 		/*
 		vscode.WorkspaceEdit.createFile(vscode.Uri.file('c:\\Development\\Test\\hello2.txt'), {
             overwrite: true,
