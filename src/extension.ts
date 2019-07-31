@@ -4,6 +4,7 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import { create } from 'domain';
 import * as fs from 'fs';
+//var x = require ("./../spec-template.txt");
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -11,6 +12,8 @@ export function activate(context: vscode.ExtensionContext) {
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension  is now active!');
+	fs.readFile("./spec-template.txt",(err,buf)=>{console.log(buf.toString());});
+	//console.log(x);
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
@@ -30,7 +33,7 @@ export function activate(context: vscode.ExtensionContext) {
 			//var  currentTabName = currentlyOpenTabfilePath.split(" " , 1);
 			//var currentTabName2 = currentTabName.splice(" ");
 			//console.log(currentTabName);
-	
+			let metin = " asdadsadas asdconsole.log('Hello World');";
 		
 		vscode.window.showInformationMessage('Action Called');
 		let folderPath = vscode.workspace.rootPath;
@@ -42,7 +45,7 @@ export function activate(context: vscode.ExtensionContext) {
 				//console.log(newFile);
 				vscode.workspace.openTextDocument(newFile).then(document => {
 					const edit = new vscode.WorkspaceEdit();
-					edit.insert(newFile, new vscode.Position(0, 0), "console.log('Hello World');");
+					edit.insert(newFile, new vscode.Position(0, 0), metin);
 					return vscode.workspace.applyEdit(edit).then(success => {
 						if (success) {
 							vscode.window.showTextDocument(document);
@@ -52,6 +55,7 @@ export function activate(context: vscode.ExtensionContext) {
 					});
 				});
 			}
+			//sniplet
 			//vscode.workspace.openTextDocument().then(doc => vscode.window.showTextDocument(doc));//.then(doc => vscode.workspace.applyEdit.name);
 
 		}	}
