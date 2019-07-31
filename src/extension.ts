@@ -17,57 +17,49 @@ export function activate(context: vscode.ExtensionContext) {
 	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('extension.action', () => {
 		// The code you place here will be executed every time your command is executed
-		
+
 		// Display a message box to the user
-		
+		if (vscode.window.activeTextEditor != undefined) {
+			var currentlyOpenTabfilePath = (vscode.window.activeTextEditor.document.fileName);
+			var fileNameArray = currentlyOpenTabfilePath.split("\\");
+			var currentFileName = fileNameArray[(fileNameArray.length)-1];
+			currentFileName = currentFileName + '.spec.js';
+			//console.log(fileNameCurrent);
+
+			//var currentlyOpenTabfilePath = (vscode.window.activeTextEditor.document.fileName).toString();
+			//var  currentTabName = currentlyOpenTabfilePath.split(" " , 1);
+			//var currentTabName2 = currentTabName.splice(" ");
+			//console.log(currentTabName);
+	
 		
 		vscode.window.showInformationMessage('Action Called');
-		let folderPath = vscode.workspace.rootPath; 
-		if(folderPath !== undefined){
-		//vscode.window.showInformationMessage("untitled: + $folderPath",folderPath);
-		let filePath = ("untitled:"+folderPath);
-		console.log(filePath);
-		if (vscode.workspace.rootPath != undefined){
-		const newFile = vscode.Uri.parse('untitled:' + path.join(vscode.workspace.rootPath, 'safsa.txt')); 
-	console.log(newFile);
-	vscode.workspace.openTextDocument(newFile).then(document => {
-		const edit = new vscode.WorkspaceEdit();
-		edit.insert(newFile, new vscode.Position(0, 0), "Hello world!");
-		return vscode.workspace.applyEdit(edit).then(success => {
-			if (success) {
-				vscode.window.showTextDocument(document);
-			} else {
-				vscode.window.showInformationMessage('Error!');
+		let folderPath = vscode.workspace.rootPath;
+		if (folderPath !== undefined) {
+			let filePath = ("untitled:" + folderPath);
+			//console.log(filePath);
+			if (vscode.workspace.rootPath != undefined) {
+				const newFile = vscode.Uri.parse('untitled:' + path.join(vscode.workspace.rootPath, currentFileName));
+				//console.log(newFile);
+				vscode.workspace.openTextDocument(newFile).then(document => {
+					const edit = new vscode.WorkspaceEdit();
+					edit.insert(newFile, new vscode.Position(0, 0), "console.log('Hello World');");
+					return vscode.workspace.applyEdit(edit).then(success => {
+						if (success) {
+							vscode.window.showTextDocument(document);
+						} else {
+							vscode.window.showInformationMessage('Error!');
+						}
+					});
+				});
 			}
-		});
+			//vscode.workspace.openTextDocument().then(doc => vscode.window.showTextDocument(doc));//.then(doc => vscode.workspace.applyEdit.name);
+
+		}	}
 	});
-	}
-	
-	
-		
-		//var oldDocText = fs.readFileSync(filePath);
-		//fs.writeFileSync(filePath, oldDocText);
-		//let a = vscode.workspace.openTextDocument
-		//vscode.workspace.openTextDocument(filePath);
-		vscode.workspace.openTextDocument().then(doc => vscode.window.showTextDocument(doc));//.then(doc => vscode.workspace.applyEdit.name);
-		
-		/*
-		vscode.WorkspaceEdit.createFile(vscode.Uri.file('c:\\Development\\Test\\hello2.txt'), {
-            overwrite: true,
-            ignoreIfExists: true
-		});
-		*/
-		}
-		//vscode.window.showInformationMessage('Say Çaça!');
-		//const blabla = vscode.window.showInputBox({ value: 'test' }).then(text => {console.log(text);});
-		//console.log(blabla);
-		//blabla = vscode.window.showInputBox();
-	
-	});
-	
+
 
 	context.subscriptions.push(disposable);
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() { }
