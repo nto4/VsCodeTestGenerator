@@ -4,6 +4,7 @@
 	"description": "Base sample for other samples at Microsoft/vscode-extension-samples",
 	"version": "0.0.1",
 	"publisher": "vscode-samples",
+	
 	"engines": {
 		"vscode": "^1.32.0"
 	},
@@ -11,37 +12,46 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.action"
+		"onCommand:extension.TestGenerator"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.action",
-				"title": "Action"
+				"command": "extension.TestGenerator",
+				"title": "Generate Test"
 			},
 			{
 				"command": "",
 				"title": "CreateFile"
 			}
 		],
+		
+			"keybindings": [
+				{
+				  "command": "extension.TestGenerator",
+				  "key": "ctrl+alt+q",
+				  "mac": "cmd+alt+q"
+				 
+				}
+			  ],
 		"menus": {
 			"explorer/context": [
 				{
-					"when": "explorerResourceIsFolder",
-					"command": "extension.action"
+					"when": "",
+					"command": "extension.TestGenerator"
 				}
 			],
 			"editor/title/context": [
 				{
 					"when": "",
-					"command": "extension.action"
+					"command": "extension.TestGenerator"
 				}
 			],
 			"editor/context": [
 				{
 					"when": "",
-					"command": "extension.action"
+					"command": "extension.TestGenerator"
 				}
 			]
 		}

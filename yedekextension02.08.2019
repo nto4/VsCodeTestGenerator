@@ -20,24 +20,23 @@ export function activate(context: vscode.ExtensionContext) {
 			counInputTag = (text.match(/input/g) || []).length;
 
 			repeaterExist = (text.match(/ng-repeat/g) || []).length;
-			console.log(counInputTag);
-			console.log(countButtonTag);
+
 			var test = text.search("input");
 			var string = text;
 
-			var re = /\<input.*?ng-model.*?"(.*?)".*?\>/igs
+			var re = /\<input.*?ng-model.*?"(.*?)".*?\>/ig
 			var match;
 			while ((match = re.exec(string)) != null) {
 				x.push(RegExp.$1);
 			}
-			var re2 = /\<button.*?ng-click.*?"(.*?)".*?\>/igs
+			var re2 = /\<button.*?ng-click.*?"(.*?)".*?\>/ig
 			var match2;
 			while ((match2 = re2.exec(string)) != null) {
 				xx.push(RegExp.$1);
 			}
 		});
 
-		let disposable = vscode.commands.registerCommand('extension.TestGenerator', () => {
+		let disposable = vscode.commands.registerCommand('extension.action', () => {
 			
 			if (vscode.window.activeTextEditor != undefined) {
 				var currentlyOpenTabfilePath = (vscode.window.activeTextEditor.document.fileName);
@@ -88,7 +87,7 @@ export function activate(context: vscode.ExtensionContext) {
 					for (let index = 0; index < countButtonTag / 2; index++) {
 						clickname = ngclicklValuesArr[index];
 						belgeBody +=  itit + belgeSendKey +  "\n			element(by.id(" + clickname + ")).click(); \n" + belgeExpectKey + ititEnd;
-					
+						console.log(index);
 					}
 
 					belge = 
@@ -102,17 +101,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 					return belge;
 
-
 				}
-				console.log(x);
-				console.log(xx);
 				var metin = testGenerate(counInputTag, countButtonTag, repeaterExist,x,xx);
-				vscode.window.showInformationMessage('Test page created');
+				vscode.window.showInformationMessage('Action Called');
 				let folderPath = vscode.workspace.rootPath;
 				if (folderPath !== undefined) {
 					let filePath = ("untitled:" + folderPath);
-					//console.log(vscode.workspace.rootPath);
-					//console.log(vscode.workspace.workspaceFolders);
 					if (vscode.workspace.rootPath != undefined) {
 						const newFile = vscode.Uri.parse('untitled:' + path.join(vscode.workspace.rootPath, currentFileName));
 						vscode.workspace.openTextDocument(newFile).then(document => {

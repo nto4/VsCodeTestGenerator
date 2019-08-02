@@ -24,13 +24,16 @@ export function activate(context: vscode.ExtensionContext) {
 			console.log(countButtonTag);
 			var test = text.search("input");
 			var string = text;
-
-			var re = /\<input.*?ng-model.*?"(.*?)".*?\>/igs
+			
+			var re = /\<input.*?ng-model.*?"(.*?)".*?\>/ig 
 			var match;
+			
 			while ((match = re.exec(string)) != null) {
 				x.push(RegExp.$1);
+				console.log("test");
+				console.log(RegExp.$1);
 			}
-			var re2 = /\<button.*?ng-click.*?"(.*?)".*?\>/igs
+			var re2 = /\<button.*?ng-click.*?"(.*?)".*?\>/ig
 			var match2;
 			while ((match2 = re2.exec(string)) != null) {
 				xx.push(RegExp.$1);
