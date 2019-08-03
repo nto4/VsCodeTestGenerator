@@ -1,10 +1,32 @@
 {
-	"name": "base-sample",
-	"displayName": "base-sample",
-	"description": "Base sample for other samples at Microsoft/vscode-extension-samples",
+	"name": "test-generator",
+	"displayName": "Test Generator",
+	"description": "Test Generator for angularjs and protractor e2e test generate x.spec.js file and generate test case for inputs and buttons",
 	"version": "0.0.1",
-	"publisher": "vscode-samples",
-	
+	"publisher": "nto4",
+	"author": "Mehmet Başaran",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nto4/VsCodeTestGenerator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nto4/VsCodeTestGenerator/issues"
+  },
+  "homepage": "https://github.com/nto4/VsCodeTestGenerator/blob/master/README.md",
+  "icon": "images/logo.png",
+  "galleryBanner": {
+    "color": "#96DFFF",
+    "theme": "light"
+  },
+
+  "keywords": [
+	  "angularjs",
+	"e2e",
+	"protractor",
+	"spec.js",
+	"generate test"
+  ],
 	"engines": {
 		"vscode": "^1.32.0"
 	},
@@ -26,15 +48,13 @@
 				"title": "CreateFile"
 			}
 		],
-		
-			"keybindings": [
-				{
-				  "command": "extension.TestGenerator",
-				  "key": "ctrl+alt+q",
-				  "mac": "cmd+alt+q"
-				 
-				}
-			  ],
+		"keybindings": [
+			{
+				"command": "extension.TestGenerator",
+				"key": "ctrl+alt+q",
+				"mac": "cmd+alt+q"
+			}
+		],
 		"menus": {
 			"explorer/context": [
 				{
@@ -69,8 +89,6 @@
 		"@types/vscode": "^1.32.0"
 	},
 	"dependencies": {
-		"he": "^1.2.0",
-		"node-html-parser": "^1.1.16",
-		"xmldom": "^0.1.27"
+		
 	}
 }
