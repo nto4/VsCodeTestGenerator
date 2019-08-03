@@ -5,28 +5,27 @@
 	"version": "0.0.1",
 	"publisher": "nto4",
 	"author": "Mehmet Başaran",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nto4/VsCodeTestGenerator.git"
-  },
-  "bugs": {
-    "url": "https://github.com/nto4/VsCodeTestGenerator/issues"
-  },
-  "homepage": "https://github.com/nto4/VsCodeTestGenerator/blob/master/README.md",
-  "icon": "images/logo.png",
-  "galleryBanner": {
-    "color": "#96DFFF",
-    "theme": "light"
-  },
-
-  "keywords": [
-	  "angularjs",
-	"e2e",
-	"protractor",
-	"spec.js",
-	"generate test"
-  ],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nto4/VsCodeTestGenerator.git"
+	},
+	"bugs": {
+		"url": "https://github.com/nto4/VsCodeTestGenerator/issues"
+	},
+	"homepage": "https://github.com/nto4/VsCodeTestGenerator/blob/master/README.md",
+	"icon": "images/logo.png",
+	"galleryBanner": {
+		"color": "#96DFFF",
+		"theme": "light"
+	},
+	"keywords": [
+		"angularjs",
+		"e2e",
+		"protractor",
+		"spec.js",
+		"generate test"
+	],
 	"engines": {
 		"vscode": "^1.32.0"
 	},
@@ -88,7 +87,5 @@
 		"typescript": "^3.5.1",
 		"@types/vscode": "^1.32.0"
 	},
-	"dependencies": {
-		
-	}
+	"dependencies": {}
 }

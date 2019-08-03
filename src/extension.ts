@@ -121,6 +121,8 @@ export function activate(context: vscode.ExtensionContext) {
 							return vscode.workspace.applyEdit(edit).then(success => {
 								if (success) {
 									vscode.window.showTextDocument(document);
+								//Here ı want change save position for test page
+								
 								} else {
 									vscode.window.showInformationMessage('Error!');
 								}
