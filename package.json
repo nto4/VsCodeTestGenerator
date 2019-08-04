@@ -50,8 +50,8 @@
 		"keybindings": [
 			{
 				"command": "extension.TestGenerator",
-				"key": "ctrl+alt+q",
-				"mac": "cmd+alt+q"
+				"key": "ctrl+alt+w",
+				"mac": "cmd+alt+w"
 			}
 		],
 		"menus": {

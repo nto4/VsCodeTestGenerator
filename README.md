@@ -1,5 +1,37 @@
-# Base Sample
+# VSCode TortoiseHg Commands
 
-This sample is similar to the [helloworld-sample](../helloworld-sample), but it follows the [Sample Guideline](https://github.com/Microsoft/vscode-extension-samples/blob/master/.github/SAMPLE_GUIDELINE.md).
 
-You can easily write a new sample following the guideline by `cp -r .base-sample my-sample`.
+[![](https://vsmarketplacebadge.apphb.com/version-short/karanba.vscode-tortoisehg-commands.svg)](https://marketplace.visualstudio.com/items?itemName=karanba.vscode-tortoisehg-commands) [![GitHub](https://img.shields.io/github/license/karanba/VSCode-TortoiseHg-Commands.svg)](https://raw.githubusercontent.com/karanba/VSCode-TortoiseHg-Commands/master/LICENSE) [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/karanba/VSCode-TortoiseHg-Commands.svg)](https://github.com/karanba/VSCode-TortoiseHg-Commands) [![GitHub](https://img.shields.io/github/issues/karanba/VSCode-TortoiseHg-Commands.svg?style=flat-square)](https://github.com/karanba/VSCode-TortoiseHg-Commands/issues) 
+
+## Overview
+
+This extension has shortcuts to be able to run some TortoiseHg command for mercurial repos.
+
+## Installation
+
+```
+ext install karanba.vscode-tortoisehg-commands
+```
+
+# Prerequisites
+
+TortoiseHg must be installed in your local and thg.exe must be in your path.
+
+![Hg](images/editor-context-menu.png) 
+
+# Features
+Following commands are avalible in explorer/context, editor/context and editor/title/context menus.
+ 
+* Open workbench 
+* Annotate file 
+* Show revision history
+* Compare revisions side-bye-side
+
+## Available Commands
+* thg: Annotate File - THG
+* thg: Revision History - THG
+
+# Feedback & Contributing
+
+ * Please report any bugs, suggestions or documentation requests via the [Github issues](https://github.com/karanba/VSCode-TortoiseHg-Commands/issues).
+ * Feel free to submit [pull requests](https://github.com/karanba/VSCode-TortoiseHg-Commands/pulls).

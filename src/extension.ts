@@ -25,12 +25,12 @@ export function activate(context: vscode.ExtensionContext) {
 			var test = text.search("input");
 			var string = text;
 
-			var re = /\<input.*?ng-model.*?"(.*?)".*?\>/igs
+			var re = /\<input.*?ng-model.*?"(.*?)".*?\>/igs;
 			var match;
 			while ((match = re.exec(string)) != null) {
 				x.push(RegExp.$1);
 			}
-			var re2 = /\<button.*?ng-click.*?"(.*?)".*?\>/igs
+			var re2 = /\<button.*?ng-click.*?"(.*?)".*?\>/igs;
 			var match2;
 			while ((match2 = re2.exec(string)) != null) {
 				xx.push(RegExp.$1);
@@ -92,7 +92,7 @@ export function activate(context: vscode.ExtensionContext) {
 					}
 
 					belge = 
-					 	  describe
+							describe
 						+ itit
 						+ angularCheck
 						+ headerCheck
@@ -111,16 +111,18 @@ export function activate(context: vscode.ExtensionContext) {
 				let folderPath = vscode.workspace.rootPath;
 				if (folderPath !== undefined) {
 					let filePath = ("untitled:" + folderPath);
-					//console.log(vscode.workspace.rootPath);
+					//console.log(vscode.workspace.rootPath);+
 					//console.log(vscode.workspace.workspaceFolders);
 					if (vscode.workspace.rootPath != undefined) {
 						const newFile = vscode.Uri.parse('untitled:' + path.join(vscode.workspace.rootPath, currentFileName));
+						console.log(newFile);
 						vscode.workspace.openTextDocument(newFile).then(document => {
 							const edit = new vscode.WorkspaceEdit();
 							edit.insert(newFile, new vscode.Position(0, 0), metin);
 							return vscode.workspace.applyEdit(edit).then(success => {
 								if (success) {
 									vscode.window.showTextDocument(document);
+									vscode.TextDocumentSaveReason;
 								//Here ı want change save position for test page
 								
 								} else {
@@ -137,7 +139,7 @@ export function activate(context: vscode.ExtensionContext) {
 			else {
 				vscode.window.showInformationMessage('Error! cant find path');
 			}
-			vscode.workspace.findFiles
+			//vscode.workspace.findFiles
 		});
 		context.subscriptions.push(disposable);
 	}
