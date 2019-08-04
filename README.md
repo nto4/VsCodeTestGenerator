@@ -26,7 +26,7 @@ Following command is avalible in explorer/context, editor/context and editor/tit
 
 # Demo 
 
- Generate test file for check your input and botton field 
+ Generate test file for check your input and button field 
 
 ![Hg](images/demo.gif) 
 
