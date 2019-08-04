@@ -23,6 +23,13 @@ Following command is avalible in explorer/context, editor/context and editor/tit
 ## Available Commands
 * Generate Test
 
+# Demo 
+
+TortoiseHg must be installed in your local and thg.exe must be in your path.
+
+![Hg](images/demo.gif) 
+
+
 # Feedback & Contributing
 
  * Please report any bugs, suggestions or documentation requests via the [Github issues](https://github.com/nto4/VsCodeTestGenerator/issues).
