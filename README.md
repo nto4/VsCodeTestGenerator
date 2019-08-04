@@ -20,14 +20,19 @@ Following command is avalible in explorer/context, editor/context and editor/tit
 * Right-click the file for which you want to create a test and click Generate Test
 
 
+
 ## Available Commands
 * Generate Test
 
 # Demo 
 
-TortoiseHg must be installed in your local and thg.exe must be in your path.
+ Generate test file for check your input and botton field 
 
 ![Hg](images/demo.gif) 
+
+## Future
+
+* In future add captured and generate test other keywords in angular js like ng-repete.
 
 
 # Feedback & Contributing
