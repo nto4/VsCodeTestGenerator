@@ -99,6 +99,33 @@
                 "createTests.customLocationForTestFiles": {
                     "type": "string",
                     "description": "Set this property in case you want to specify the custom location for test files."
+                },
+                "createTests.testFilesSuffix": {
+                    "type": "string",
+                    "default": "test",
+                    "description": "Suffix to use for the test files."
+                },
+                "createTests.shouldSwitchToTestFile": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Whether to switch to the test file or not after creating it."
+                },
+                "createTests.template.*": {
+                    "type": [
+                        "array",
+                        "object"
+                    ],
+                    "description": "Language specific templates that you want to use."
+                },
+                "createTests.template.default": {
+                    "type": [
+                        "array",
+                        "object"
+                    ],
+                    "default": [
+                        "import {${moduleName}} from '${modulePath}';"
+                    ],
+                    "description": "Default template to use for all test file"
                 }
             }
         }
