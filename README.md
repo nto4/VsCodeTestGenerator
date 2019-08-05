@@ -1,7 +1,7 @@
 # VsCodeTestGenerator
 
 
-[![](https://vsmarketplacebadge.apphb.com/version-short/karanba.vscode-tortoisehg-commands.svg)](https://marketplace.visualstudio.com/items?itemName=mehmetbsrn.test-generator) [![GitHub](https://img.shields.io/github/license/karanba/VSCode-TortoiseHg-Commands.svg)](https://raw.githubusercontent.com/karanba/VSCode-TortoiseHg-Commands/master/LICENSE) [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/karanba/VSCode-TortoiseHg-Commands.svg)](https://github.com/nto4/VsCodeTestGenerator) [![GitHub](https://img.shields.io/github/issues/karanba/VSCode-TortoiseHg-Commands.svg?style=flat-square)](https://github.com/nto4/VsCodeTestGenerator/issues) 
+[![](https://vsmarketplacebadge.apphb.com/version-short/mehmetbsrn.test-generator.svg)](https://marketplace.visualstudio.com/items?itemName=mehmetbsrn.test-generator) [![GitHub](https://img.shields.io/github/license/nto4//mehmetbsrn.test-generator.svg)](https://raw.githubusercontent.com/karanba/VSCode-TortoiseHg-Commands/master/LICENSE) [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/karanba/VSCode-TortoiseHg-Commands.svg)](https://github.com/nto4/VsCodeTestGenerator) [![GitHub](https://img.shields.io/github/issues/karanba/VSCode-TortoiseHg-Commands.svg?style=flat-square)](https://github.com/nto4/VsCodeTestGenerator/issues)
 
 
 ## Overview
