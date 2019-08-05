@@ -1,7 +1,7 @@
 # VsCodeTestGenerator
 
 
-[![](https://vsmarketplacebadge.apphb.com/version-short/mehmetbsrn.test-generator.svg)](https://marketplace.visualstudio.com/items?itemName=mehmetbsrn.test-generator) [![GitHub](https://img.shields.io/github/license/nto4//mehmetbsrn.test-generator.svg)](https://raw.githubusercontent.com/karanba/VSCode-TortoiseHg-Commands/master/LICENSE) [![GitHub](https://img.shields.io/github/issues/nto4/VsCodeTestGenerator.svg?style=flat-square)](https://github.com/nto4/VsCodeTestGenerator/issues)
+[![](https://vsmarketplacebadge.apphb.com/version-short/mehmetbsrn.test-generator.svg)](https://marketplace.visualstudio.com/items?itemName=mehmetbsrn.test-generator) [![GitHub](https://img.shields.io/github/license/nto4/mehmetbsrn.test-generator.svg)](https://raw.githubusercontent.com/karanba/VSCode-TortoiseHg-Commands/master/LICENSE) [![GitHub](https://img.shields.io/github/issues/nto4/VsCodeTestGenerator.svg?style=flat-square)](https://github.com/nto4/VsCodeTestGenerator/issues)
 
 
 ## Overview
