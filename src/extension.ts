@@ -57,8 +57,8 @@ export function activate(context: vscode.ExtensionContext) {
 				//let clickButton = "\n			element(by.id("+ clickname +")).click(); \n";
 				//let sendKey = "\n   			element(by.model(" + modelname + ")).sendKeys('TypeHere'); \n";
 				let expectKey = "\n 			expect(element(by.id('TypeHere')).getText()).toEqual('TypeHere'); \n";
-				let describe = "describe('Type Describe', function ()";
-				let itit = "{\n	it('Type fetch details', async function () {";
+				let describe = "describe('Type Describe', function (){";
+				let itit = "\n	it('Type fetch details', async function () {";
 				let angularCheck = "\n 		browser.waitForAngular";
 				let headerCheck = "\n		await browser.get('http://localhost:TypeHere/');\n	\n		await expect(browser.getTitle()).toEqual('TypeHere');	";
 				let ititEnd = "		\n\n	});";
