@@ -2,7 +2,7 @@
 	"name": "test-generator",
 	"displayName": "Test Generator",
 	"description": "Test Generator for angularjs and protractor e2e test generate x.spec.js file and generate test case for inputs and buttons",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "mehmetbsrn",
 	"author": "Mehmet Başaran",
 	"license": "MIT",
