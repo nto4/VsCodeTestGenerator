@@ -3,7 +3,7 @@
 	"displayName": "Test Generator",
 	"description": "Test Generator for angularjs and protractor e2e test generate x.spec.js file and generate test case for inputs and buttons",
 	"version": "0.0.1",
-	"publisher": "nto4",
+	"publisher": "mehmetbsrn",
 	"author": "Mehmet Başaran",
 	"license": "MIT",
 	"repository": {
@@ -87,5 +87,7 @@
 		"typescript": "^3.5.1",
 		"@types/vscode": "^1.32.0"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"vsce": "^1.66.0"
+	}
 }
