@@ -75,35 +75,34 @@
 			]
 		},
 		"configuration": {
-            "title": "Where to keep the test files?",
-            "properties": {
-                "createTests.defaultLocationForTestFiles": {
-                    "type": "string",
-                    "default": "same location as source file",
-                    "enum": [
-                        "same location as source file",
-                        "project root"
-                    ],
-                    "description": "Where to keep the created test files?"
-                },
-                "createTests.sourceDir": {
-                    "type": "string",
-                    "default": "src",
-                    "description": "Name of directory which contains all source files. This directory is not created when generating the directory structure for the test file."
-                },
-                "createTests.testDirectoryName": {
-                    "type": "string",
-                    "default": "tests",
-                    "description": "Name of the test directory."
-                },
-                "createTests.customLocationForTestFiles": {
-                    "type": "string",
-                    "description": "Set this property in case you want to specify the custom location for test files."
-                }
-            }
-        }
+			"title": "Where to keep the test files?",
+			"properties": {
+				"createTests.defaultLocationForTestFiles": {
+					"type": "string",
+					"default": "same location as source file",
+					"enum": [
+						"same location as source file",
+						"project root"
+					],
+					"description": "Where to keep the created test files?"
+				},
+				"createTests.sourceDir": {
+					"type": "string",
+					"default": "src",
+					"description": "Name of directory which contains all source files. This directory is not created when generating the directory structure for the test file."
+				},
+				"createTests.testDirectoryName": {
+					"type": "string",
+					"default": "tests",
+					"description": "Name of the test directory."
+				},
+				"createTests.customLocationForTestFiles": {
+					"type": "string",
+					"description": "Set this property in case you want to specify the custom location for test files."
+				}
+			}
+		}
 	},
-	
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
@@ -117,6 +116,7 @@
 		"@types/vscode": "^1.32.0"
 	},
 	"dependencies": {
-		"vsce": "^1.66.0"
+		"vsce": "^1.66.0",
+		"vscode": "^1.1.36"
 	}
 }

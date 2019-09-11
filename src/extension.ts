@@ -1,8 +1,5 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import * as path from 'path';
-// tsconfig.json 	"noImplicitAny": false for type casting array
 var countButtonTag: number;
 var counInputTag: number;
 var repeaterExist: number;
@@ -18,8 +15,6 @@ export function activate(context: vscode.ExtensionContext) {
 			countButtonTag = (text.match(/button/g) || []).length;
 			counInputTag = (text.match(/input/g) || []).length;
 			repeaterExist = (text.match(/ng-repeat/g) || []).length;
-			console.log(counInputTag);
-			console.log(countButtonTag);
 			var test = text.search("input");
 			var string = text;
 			var re = /\<input.*?ng-model.*?"(.*?)".*?\>/igs;
@@ -40,19 +35,12 @@ export function activate(context: vscode.ExtensionContext) {
 				var currentlyOpenTabfilePath = (vscode.window.activeTextEditor.document.fileName);
 				var fileNameArray = currentlyOpenTabfilePath.split("\\");
 				var currentFileName = fileNameArray[(fileNameArray.length) - 1];
-
 				var withOutEndfixFileNameAndPrefix = currentFileName.split(".");
-
 				var xxx = withOutEndfixFileNameAndPrefix[0];
-
 				currentFileName = xxx + '.spec.js';
-
 				var modelname: string = "NgModelValue";
 				var clickname: string = "NgModelValue";
-
 				var belge: string;
-				//let clickButton = "\n			element(by.id("+ clickname +")).click(); \n";
-				//let sendKey = "\n   			element(by.model(" + modelname + ")).sendKeys('TypeHere'); \n";
 				let expectKey = "\n 			expect(element(by.id('TypeHere')).getText()).toEqual('TypeHere'); \n";
 				let describe = "describe('Type Describe', function (){";
 				let itit = "\n	it('Type fetch details', async function () {";
@@ -62,33 +50,16 @@ export function activate(context: vscode.ExtensionContext) {
 				let describeEnd = "\n});";
 				let belgeSendKey: string = "";
 				let belgeExpectKey: string = "";
-				//let repeater = "\n			 expect(element.all(by.repeater('Type in TypesHere')).count()).toEqual(TypeExpectCount); \n"
-				//button element number =  countButtonTag/2
-				//input element number = 	counInputTag
 				function testGenerate(counInputTag: number, countButtonTag: number, repeaterExist: number, ngmodelValuesArr, ngclicklValuesArr) {
-					if(ngmodelValuesArr.length < counInputTag)
-					{
-						console.log("dizin kucuk");
-					console.log(ngmodelValuesArr.length);
-					console.log(counInputTag);
-					for (let index = ngmodelValuesArr.length; index < counInputTag; index++) {
-						console.log("çalıştı");
-						ngmodelValuesArr[index] = "\'CantFindModel\'";
+					if (ngmodelValuesArr.length < counInputTag) {
+						for (let index = ngmodelValuesArr.length; index < counInputTag; index++) {
+							ngmodelValuesArr[index] = "\'CantFindModel\'";
+						}
 					}
-					console.log(ngmodelValuesArr);
-				
-					}
-					if(ngclicklValuesArr.length < (countButtonTag/2))
-					{
-						console.log("dizin kucuk");
-					console.log(ngmodelValuesArr.length);
-					console.log(counInputTag);
-					for (let index = ngclicklValuesArr.length; index < (countButtonTag/2); index++) {
-						console.log("çalıştı");
-						ngclicklValuesArr[index] = "\'CantFindButtonNgClick\'";
-					}
-					console.log(ngmodelValuesArr);
-				
+					if (ngclicklValuesArr.length < (countButtonTag / 2)) {
+						for (let index = ngclicklValuesArr.length; index < (countButtonTag / 2); index++) {
+							ngclicklValuesArr[index] = "\'CantFindButtonNgClick\'";
+						}
 					}
 					for (let index = 0; index < counInputTag; index++) {
 						modelname = ngmodelValuesArr[index];
@@ -96,22 +67,9 @@ export function activate(context: vscode.ExtensionContext) {
 						belgeExpectKey += expectKey;
 					}
 					var belgeBody: string = "";
-					// if (repeaterExist != 0) {
-					// 	var belgeBody: string  = itit + belgeSendKey + clickButton + repeater + belgeExpectKey + ititEnd;
-					// }
-					// else {
-					// 	var belgeBody: string = itit + belgeSendKey + clickButton + belgeExpectKey + ititEnd;
-					// }
-
 					for (let index = 0; index < countButtonTag / 2; index++) {
-					//	if (clickname == undefined) {
-						//	clickname = 'TypeHere';
-						//	belgeBody += itit + belgeSendKey + "\n			element(by.id(" + clickname + ")).click(); \n" + belgeExpectKey + ititEnd;
-						//}
-						//else {
-							clickname = ngclicklValuesArr[index];
-							belgeBody += itit + belgeSendKey + "\n			element(by.id(" + clickname + ")).click(); \n" + belgeExpectKey + ititEnd;
-						//}
+						clickname = ngclicklValuesArr[index];
+						belgeBody += itit + belgeSendKey + "\n			element(by.id(" + clickname + ")).click(); \n" + belgeExpectKey + ititEnd;
 					}
 					belge =
 						describe
@@ -121,7 +79,6 @@ export function activate(context: vscode.ExtensionContext) {
 						+ ititEnd
 						+ belgeBody
 						+ describeEnd;
-
 					return belge;
 				}
 				var metin = testGenerate(counInputTag, countButtonTag, repeaterExist, modelnames, clicknames);
@@ -130,7 +87,6 @@ export function activate(context: vscode.ExtensionContext) {
 				if (folderPath !== undefined && vscode.workspace.rootPath != undefined) {
 					let filePath = ("untitled:" + folderPath);
 					const newFile = vscode.Uri.parse('untitled:' + path.join(vscode.workspace.rootPath, currentFileName));
-					//console.log(newFile);
 					vscode.workspace.openTextDocument(newFile).then(document => {
 						const edit = new vscode.WorkspaceEdit();
 						edit.insert(newFile, new vscode.Position(0, 0), metin);
@@ -138,7 +94,6 @@ export function activate(context: vscode.ExtensionContext) {
 							if (success) {
 								vscode.window.showTextDocument(document);
 								vscode.TextDocumentSaveReason;
-								//Here  change save position for test page
 							} else {
 								vscode.window.showInformationMessage('Error!');
 							}
